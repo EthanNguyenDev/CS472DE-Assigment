@@ -1,0 +1,78 @@
+body {
+  background-image: url("images/background.png");
+  font-size: 8pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0%;
+  margin: 25%;
+  margin-top: 0%;
+}
+
+#container {
+  width: 800px;
+  margin: 0 auto;
+
+}
+
+.rating {
+    background-image: url("images/rbg.png");
+    background-repeat: repeat-x;
+}
+.rating-percent {
+    color: red;
+    font-size: 48pt;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+#right-panel {
+  background-color: #a2b964;
+  border-radius: 16px;
+  padding: 10px;
+
+  float: right;
+  width: 250px;
+}
+
+#left-panel {
+  float: left;
+  width: 520px;
+}
+
+.clear {
+  clear: both;
+}
+.review {
+    float: left;
+    width: 250px;
+    margin-right: 2px;
+    margin-top: 20px;
+    min-height: 100px;
+}
+
+.review .text {
+  background-color: #e6db9d;
+  padding: 5px;
+  border-radius: 10px;
+  line-height: 1.5;
+  margin-right: 10px;
+  border: 2px solid grey;
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+
+
+.validators {
+  opacity: 0.4;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
