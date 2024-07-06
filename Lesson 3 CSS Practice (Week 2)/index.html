@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #outer {
+      border: 2px dashed black;
+      padding: 10px;
+      overflow: hidden;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      margin: 10px;
+      float: left;
+    }
+    .break {
+      clear: left;
+    }
+
+    ul {
+      background-color: red;
+      padding: 20px;
+      text-align: center;
+    }
+
+    li {
+      display: inline;
+      border: 1px solid black;
+      padding: 10px;
+      background-color: white;
+    }
+
+    #container {
+      background-color: lightgray;
+      overflow: hidden;
+      padding: 10px;
+      width: 500px;
+    }
+    #column1,
+    #column2 {
+      background-color: lightblue;
+      float: right;
+      margin-left: 10px;
+      width: 100px;
+    }
+    h1 {
+      background-color: yellow;
+    }
+
+    #a, #aa, #b, #bb {
+      width: 100px;
+      height: 100px;
+      font: 30pt bold Helvetica, Arial, sans-serif;
+      line-height: 100px;
+      text-align: center;
+    }
+    #a,
+    #aa {
+      background-color: lightblue;
+    }
+    #b,
+    #bb {
+      background-color: pink;
+    }
+    #c,
+    #cc {
+      background-color: lightgray;
+    }
+
+    #a {
+      float: left;
+    }
+    #b {
+      float: right;
+      clear: left;
+    }
+    #c {
+      text-align: right;
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #aa,
+    #bb {
+      float: left;
+    }
+    #cc {
+      margin-left: 200px;
+    }
+  </style>
+  <body>
+    <div id="outer">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box break"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <ul>
+      <li>Bananas</li>
+      <li>Apples</li>
+      <li>Grapefruit</li>
+      <li>Oranges</li>
+      <li>Papaya</li>
+    </ul>
+
+    <div id="container">
+      <h1>Header</h1>
+
+      <div id="column1">
+        <h2>Area 1</h2>
+        <p>Lorem ipsum ...</p>
+      </div>
+
+      <div id="column2">
+        <h2>Area 2</h2>
+        <p>Lorem ipsum ...</p>
+      </div>
+
+      <h2>Area 3</h2>
+      <p>Lorem ipsum ...</p>
+    </div>
+
+    <div style="margin-top: 20px"></div>
+    <div id="a">A</div>
+    <div id="b">B</div>
+    <div id="c">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A laboriosam
+      dignissimos nostrum sunt iure. Aspernatur aut omnis rerum laudantium
+      dolore nobis sapiente sit eaque, impedit nam, inventore, nihil doloremque
+      veniam.
+    </div>
+
+    <div style="margin-top: 20px"></div>
+    <div id="aa">A</div>
+    <div id="bb">B</div>
+    <div id="cc">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A laboriosam
+      dignissimos nostrum sunt iure. Aspernatur aut omnis rerum laudantium
+      dolore nobis sapiente sit eaque, impedit nam, inventore, nihil doloremque
+      veniam.
+    </div>
+  </body>
+</html>
