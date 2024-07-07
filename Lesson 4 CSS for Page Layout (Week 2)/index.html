@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 1rem;
+      background-color: #add8e6;
+    }
+
+    nav,
+    footer {
+      padding: 1rem;
+      background-color: #2f4f4f; /* Updated color for header, nav, and footer */
+      color: #fff; /* Text color for header, nav, and footer */
+      text-align: center;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex; /* Updated for horizontal layout */
+      justify-content: space-between;
+      padding: 0;
+      /* Added rule to prevent full width expansion */
+      width: fit-content;
+    }
+
+    nav li {
+      margin: 0 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit; /* Inherit color from parent (white) */
+      white-space: nowrap; /* Prevents wrapping to next line */
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .col1,
+    .col2,
+    .col3 {
+      padding: 0.75rem;
+      margin: -0.75rem;
+      flex: 1 0 33.33%; /* 33.33% width for desktop */
+    }
+
+    .col1 {
+      background-color: #aaaaaa;
+    }
+    .col2 {
+      background-color: #bbbbbb;
+    }
+    .col3 {
+      background-color: #cccccc;
+    }
+
+    @media (max-width: 768px) {
+      .col1,
+      .col2 {
+        flex: 1 0 50%; /* 50% width for mobile */
+      }
+      .col3 {
+        width: 100%; /* Full width on mobile */
+      }
+    }
+  </style>
+
+  <body>
+    <header>
+      <h1>Header</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="container">
+        <div class="col1">
+          <h2>Column 1 Content</h2>
+          <p>This is some content for the first column.</p>
+        </div>
+        <div class="col2">
+          <h2>Column 2 Content</h2>
+          <p>This is some content for the second column.</p>
+        </div>
+        <div class="col3">
+          <h2>Column 3 Content</h2>
+          <p>This is some content for the third column.</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>
