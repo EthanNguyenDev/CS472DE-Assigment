@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <p>Please open browser's console to check for output</p>
+    <script>
+      // Using Object Prototype Approach
+      const Person = {
+        init(name, age) {
+          this.name = name;
+          this.age = age;
+        },
+        greeting() {
+          console.log(
+            `Greetings, my name is ${this.name} and I am ${this.age} years old.`
+          );
+        },
+        salute() {
+          console.log(
+            "Good morning!, and in case I dont see you, good afternoon, good evening and good night!"
+          );
+        },
+      };
+
+      const Student = Object.create(Person);
+      Student.init = function (name, age, major) {
+        Person.init.call(this, name, age); // Call Person's init method
+        this.major = major;
+      };
+      Student.greeting = function () {
+        console.log(
+          `Hey, my name is ${this.name} and I am studying ${this.major}.`
+        );
+      };
+
+      const Professor = Object.create(Person);
+      Professor.init = function (name, age, department) {
+        Person.init.call(this, name, age); // Call Person's init method
+        this.department = department;
+      };
+      Professor.greeting = function () {
+        console.log(
+          `Good day, my name is ${this.name} and I am in the ${this.department} department.`
+        );
+      };
+
+      const student1 = Object.create(Student);
+      student1.init("Alice", 20, "Computer Science");
+
+      const professor1 = Object.create(Professor);
+      professor1.init("Bob", 50, "Mathematics");
+
+      student1.greeting();
+      student1.salute();
+
+      professor1.greeting();
+      professor1.salute();
+    </script>
+  </body>
+</html>

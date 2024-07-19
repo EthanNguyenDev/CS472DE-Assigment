@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <p>Please open browser's console to check for output</p>
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      Person.prototype.greeting = function () {
+        console.log(
+          `Greetings, my name is ${this.name} and I am ${this.age} years old.`
+        );
+      };
+
+      Person.prototype.salute = function () {
+        console.log(
+          "Good morning!, and in case I dont see you, good afternoon, good evening and good night!"
+        );
+      };
+
+      function Student(name, age, major) {
+        Person.call(this, name, age); // Call Person constructor
+        this.major = major;
+      }
+
+      Student.prototype = Object.create(Person.prototype); // Inherit from Person
+      Student.prototype.constructor = Student; // Reset constructor to Student
+
+      Student.prototype.greeting = function () {
+        console.log(
+          `Hey, my name is ${this.name} and I am studying ${this.major}.`
+        );
+      };
+
+      function Professor(name, age, department) {
+        Person.call(this, name, age); // Call Person constructor
+        this.department = department;
+      }
+
+      Professor.prototype = Object.create(Person.prototype); // Inherit from Person
+      Professor.prototype.constructor = Professor; // Reset constructor to Professor
+
+      Professor.prototype.greeting = function () {
+        console.log(
+          `Good day, my name is ${this.name} and I am in the ${this.department} department.`
+        );
+      };
+
+      // Create objects
+      const student1 = new Student("Alice", 20, "Computer Science");
+      const professor1 = new Professor("Bob", 50, "Mathematics");
+
+      // Call methods
+      student1.greeting(); // Output: Hey, my name is Alice and I am studying Computer Science.
+      student1.salute(); // Output: (Inherited from Person)
+
+      professor1.greeting(); // Output: Good day, my name is Bob and I am in the Mathematics department.
+      professor1.salute(); // Output: (Inherited from Person)
+    </script>
+  </body>
+</html>

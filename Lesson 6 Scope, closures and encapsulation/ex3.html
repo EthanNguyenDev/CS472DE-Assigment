@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Function constructor</title>
+  </head>
+  <body>
+    <p>
+      Please open browser's console to check for output
+    </p>
+    <script>
+      function Person(name) {
+        this.name = name;
+      }
+
+      function Teacher(name) {
+        Person.call(this, name); // Call Person constructor to inherit properties
+        this.teach = function (subject) {
+          console.log(`${this.name} is now teaching ${subject}. with Function constructor`);
+        };
+      }
+
+      const teacher1 = new Teacher("Alex");
+      teacher1.teach("Math");
+
+      function createPerson(name) {
+        return {
+          name,
+        };
+      }
+
+      function createTeacher(name) {
+        const person = createPerson(name);
+        return Object.create(person, {
+          teach: {
+            value: function (subject) {
+              console.log(`${this.name} is now teaching ${subject}. with Object.create()`);
+            },
+          },
+        });
+      }
+
+      const teacher2 = createTeacher("Jane");
+      teacher2.teach("English");
+    </script>
+  </body>
+</html>

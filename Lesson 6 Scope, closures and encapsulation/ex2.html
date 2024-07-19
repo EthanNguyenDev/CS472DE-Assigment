@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BubbleSort</title>
+  </head>
+  <body>
+    <p>
+      Please open browser's console to check for output
+    </p>
+    <script>
+      Array.prototype.bubbleSortWhile = function () {
+        const arr = this;
+        let swapped = true;
+
+        while (swapped) {
+          swapped = false;
+          for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+              // Swap elements if out of order
+              [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+              swapped = true;
+            }
+          }
+        }
+
+        return this; // Return the sorted array
+      };
+
+      const arr = [6, 4, 0, 3, -2, 1];
+      console.log("before:", arr);
+      console.log("after:", arr.bubbleSortWhile());
+
+      const arr2 = [5, 4, 3, 99, 1000, 2000, -10];
+      console.log("before:", arr2);
+      console.log("after:", arr2.bubbleSortWhile());
+    </script>
+  </body>
+</html>

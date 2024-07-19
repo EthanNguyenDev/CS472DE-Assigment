@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Function on String</title>
+</head>
+<body>
+    <p>Please open browser's console to check for output of the filter function</p>
+    <script>
+        function filterBannedWords(str, bannedWords) {
+            // Split the string into an array of words
+            const words = str.split(' ');
+            const filteredWords = words.filter(word => !bannedWords.includes(word));
+            return filteredWords.join(' ');
+        }
+
+        const testString = "This house is not nice!";
+        const bannedList = ['not'];
+        const filteredString = filterBannedWords(testString, bannedList);
+        console.log(filteredString); // Output: This house is nice!
+
+        const testString2 = "Today is not a good day. BANNED"
+        const bannedList2 = ['BANNED', 'not'];
+        const filteredString2 = filterBannedWords(testString2, bannedList2);
+        console.log(filteredString2); // Output: This house is nice!
+       
+    </script>
+</body>
+</html>
