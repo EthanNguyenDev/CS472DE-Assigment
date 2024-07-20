@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Please turn on browser console to view result</h2>
+  </body>
+
+  <script>
+    /* 4 Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers */
+    const sum = (arr) => arr.reduce((acc, curr) => acc + curr, 0);
+    const multiply = (arr) => arr.reduce((acc, curr) => acc * curr, 1);
+
+    console.log(sum([1, 2, 3, 4]));
+    console.log(multiply([1, 2, 3, 4]));
+
+    /* 5 Define a function reverse() that computes the reversal of a string. */
+    const reverse = (str) => str.split("").reduce((acc, char) => char + acc, "");
+    console.log(reverse("hello world"));
+
+    /* 7 Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i. */
+    const filterLongWords = (words, i) => words.filter((word) => word.length > i);
+    console.log( filterLongWords(["hello", "world", "JavaScript", "is", "not", "fun"], 4));
+  </script>
+</html>
